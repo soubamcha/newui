@@ -14,10 +14,14 @@ const styles = {
   appbar: {
     // backgroundColor: '#311b92',
     backgroundColor: 'white',
-    cursor: 'pointer',
+  },
+  logo: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
   avatar: {
     margin: 10,
+    cursor: 'pointer',
   },
 };
 
@@ -39,7 +43,7 @@ class MenuAppBar extends React.Component {
             <IconButton className={classes.menuButton} color="primary" aria-label="Menu">
               <MenuIcon />
             </IconButton>
-            <img src="/tis.png" alt="logo" />
+            <img src="/tis.png" alt="logo" className={classes.logo} />
             <div>
               <Avatar alt="avatar" src="/avatar.jpeg" className={classes.avatar} />
             </div>
