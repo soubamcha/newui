@@ -41,6 +41,11 @@ const styles = theme => ({
     marginLeft: "auto",
     marginRight: "auto",
   },
+  title: {
+    fontSize: '140%',
+    fontWeight: 'bold',
+    lineHeight: '20px',
+  },
   paper: {
     width: '98%',
     marginLeft: "auto",
@@ -86,7 +91,7 @@ const rows = [
   createData(
     "MATLAB",
     "XYZ, Mumbai",
-    "20/DEC/18", "24/DEC/18", "15/JAN",
+    "20/DEC/18", "24/DEC/18", "--",
     "no",false,
     20, 0, "--", "announce", "cer"),
 ];
@@ -106,7 +111,7 @@ class Dashboard extends React.Component {
           <div className={classes.summarywrapper}>
             <ExpansionPanel className={classes.summary}>
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="h6" color="primary">
+                <Typography color="primary" className={classes.title}>
                   Dashboard
                 </Typography>
               </ExpansionPanelSummary>
@@ -118,9 +123,6 @@ class Dashboard extends React.Component {
             </ExpansionPanel>
           </div>
           <Paper className={classes.paper}>
-            {/* <Typography variant="h6" color="textPrimary">
-              Dashboard
-            </Typography> */}
             <Table>
               <TableHead>
                 <TableRow>
@@ -129,9 +131,9 @@ class Dashboard extends React.Component {
                   <TableCell component="th" className={classes.cell}><strong>Venue</strong></TableCell>
                   <TableCell component="th" className={classNames(classes.cell, classes.center)}><strong>From</strong></TableCell>
                   <TableCell component="th" className={classNames(classes.cell, classes.center)}><strong>To</strong></TableCell>
-                  <TableCell component="th" className={classNames(classes.cell, classes.center)}><strong>LDate</strong></TableCell>
                   <TableCell component="th" className={classNames(classes.cell, classes.center)}><FinanceIcon /></TableCell>
                   <TableCell component="th" className={classNames(classes.cell, classes.center)}><NotificationIcon /></TableCell>
+                  <TableCell component="th" className={classNames(classes.cell, classes.center)}><strong>LDate</strong></TableCell>
                   <TableCell component="th" className={classNames(classes.cell, classes.center)}><BatchSizeIcon /></TableCell>
                   <TableCell component="th" className={classNames(classes.cell, classes.center)}><NominatedIcon /></TableCell>
                   <TableCell component="th" className={classNames(classes.cell, classes.center)}><ConfirmedIcon /></TableCell>
@@ -151,7 +153,6 @@ class Dashboard extends React.Component {
                       <TableCell component="td" className={classes.cell}>{row.venue}</TableCell>
                       <TableCell component="td" className={classNames(classes.cell, classes.center)}>{row.from}</TableCell>
                       <TableCell component="td" className={classNames(classes.cell, classes.center)}>{row.to}</TableCell>
-                      <TableCell component="td" className={classNames(classes.cell, classes.center)}>{row.ldate}</TableCell>
                       <TableCell component="td" className={classNames(classes.cell, classes.center)}>
                         {
                           row.sanction==="both"?
@@ -168,6 +169,7 @@ class Dashboard extends React.Component {
                           :<CloseIcon color="secondary" />
                         }
                       </TableCell>
+                      <TableCell component="td" className={classNames(classes.cell, classes.center)}>{row.ldate}</TableCell>
                       <TableCell component="td" className={classNames(classes.cell, classes.center)}>{row.batch}</TableCell>
                       <TableCell component="td" className={classNames(classes.cell, classes.center)}>{row.nominated}</TableCell>
                       <TableCell component="td" className={classNames(classes.cell, classes.center)}>{row.confirmed}</TableCell>

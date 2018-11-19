@@ -73,7 +73,7 @@ class Login extends React.Component {
         <Paper className={classes.paper}>
           <div>
             <div className={classes.logowrapper}>
-              <img src="/tis.png" alt="logo" className={classes.logo} />
+              <img src="/tiswhite.png" alt="logo" className={classes.logo} />
             </div>
             <LinearProgress />
             <div className={classes.titlewrapper}>

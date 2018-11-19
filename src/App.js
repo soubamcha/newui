@@ -9,11 +9,9 @@ import {
 
 import Login from './components/Login';
 import MenuAppBar from "./components/AppBar";
-// import MyDrawer from "./components/Drawer";
 import Dashboard from "./components/Dashboard";
 import Calendar from "./components/Calendar";
 import Training from "./components/Training";
-// import MiniDrawer from "./components/MiniDrawer";
 
 import './App.css';
 
@@ -21,7 +19,7 @@ const auth = {
   isAuthenticated: true,
   authenticate(cb) {
     this.isAuthenticated = true;
-    setTimeout(cb, 100); // fake async
+    setTimeout(cb, 100);
   },
   signout(cb) {
     this.isAuthenticated = false;
@@ -37,11 +35,12 @@ class App extends Component {
         {
           auth.isAuthenticated && <MenuAppBar />
         }
+        <SecureRoute exact path="/dashboard" component={Dashboard} />
+        <SecureRoute exact path="/calendar" component={Calendar} />
+        <SecureRoute exact path="/calendar/{id}" component={Training} />
+
         <OpenRoute exact path="/" component={Login} />
-        <OpenRoute path="/login" component={Login} />
-        <SecureRoute path="/dashboard" component={Dashboard} />
-        <SecureRoute path="/calendar" component={Calendar} />
-        <SecureRoute path="/calendar/{id}" component={Training} />
+        <OpenRoute component={Login} />
       </div>
       </Router>
     );
@@ -76,13 +75,7 @@ function OpenRoute({ component: Component, ...rest }) {
         !auth.isAuthenticated ? (
           <Component {...props} />
         ) : (
-          <Redirect to="/calendar" />
-          // <Redirect
-          //   to={{
-          //     pathname: "/dashboard",
-          //     state: { from: props.location }
-          //   }}
-          // />
+          <Redirect to="/dashboard" />
         )
       }
     />

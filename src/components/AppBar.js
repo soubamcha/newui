@@ -15,7 +15,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Divider from '@material-ui/core/Divider';
 import Grow from '@material-ui/core/Grow';
 import Tooltip from '@material-ui/core/Tooltip';
-import LinearProgress from '@material-ui/core/LinearProgress';
 // import Drawer from '@material-ui/core/Drawer';
 // import MenuIcon from '@material-ui/icons/Menu';
 // import {List, ListItem, ListItemIcon } from '@material-ui/core';
@@ -40,7 +39,6 @@ const styles = theme => ({
     // backgroundColor: '#311b92',
     backgroundColor: 'white',
     zIndex: '5000',
-    // position: 'fixed',
   },
   toolbar: {
     margin: '0px',
@@ -174,7 +172,6 @@ class MenuAppBar extends React.Component {
             </Toolbar>
           </AppBar>
         </Router>
-        <LinearProgress />
         <Router>
           <Grow in={this.state.showCard} mountOnEnter unmountOnExit>
             <Card className={classes.card}>
@@ -207,46 +204,6 @@ class MenuAppBar extends React.Component {
             </Card>
           </Grow>
         </Router>
-        {/* <Drawer variant="permanent" className={classes.drawer}>
-          <List>
-          <Tooltip title="Dashboard" placement="right">
-            <ListItem button className={classes.listitem}>
-              <ListItemIcon className={classes.listicon}><DashboardIcon /></ListItemIcon>
-            </ListItem>
-          </Tooltip>
-					<Divider light/>
-          <Tooltip title="Calendar" placement="right">
-            <ListItem button className={classes.listitem}>
-              <ListItemIcon className={classes.listicon}><CalendarIcon /></ListItemIcon>
-            </ListItem>
-          </Tooltip>
-					<Divider light/>
-          <Tooltip title="Finances" placement="right">
-            <ListItem button className={classes.listitem}>
-              <ListItemIcon className={classes.listicon}><FinanceIcon /></ListItemIcon>
-            </ListItem>
-          </Tooltip>
-					<Divider light/>
-            <Tooltip title="Labs" placement="right">
-              <ListItem button className={classes.listitem}>
-                <ListItemIcon className={classes.listicon}><BusinessIcon /></ListItemIcon>
-              </ListItem>
-            </Tooltip>
-					<Divider light/>
-          <Tooltip title="Institutes" placement="right">
-            <ListItem button className={classes.listitem}>
-              <ListItemIcon className={classes.listicon}><BuildingIcon /></ListItemIcon>
-            </ListItem>
-          </Tooltip>
-					<Divider light/>
-          <Tooltip title="Users" placement="right">
-            <ListItem button className={classes.listitem}>
-              <ListItemIcon className={classes.listicon}><PeopleIcon /></ListItemIcon>
-            </ListItem>
-          </Tooltip>
-          <Divider light/>
-          </List>
-        </Drawer> */}
       </div>
     );
   }

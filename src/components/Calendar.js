@@ -13,6 +13,7 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 import CheckIcon from '@material-ui/icons/DoneOutlined';
 import CheckAllIcon from '@material-ui/icons/DoneAllOutlined';
@@ -118,6 +119,7 @@ class Training extends React.Component {
 
     return (
       <div className={classes.root}>
+        <LinearProgress />
         <div className={classes.summarywrapper}>
           <ExpansionPanel className={classes.summary}>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
@@ -139,7 +141,7 @@ class Training extends React.Component {
               <TableRow>
                 <TableCell component="th" className={classNames(classes.cell, classes.center)}><strong>SN</strong></TableCell>
                 <TableCell component="th" className={classes.cell}><strong>Title</strong></TableCell>
-                <TableCell component="th" className={classes.cell}><strong>CAT</strong></TableCell>
+                <TableCell component="th" className={classNames(classes.cell, classes.center)}><strong>CAT</strong></TableCell>
                 <TableCell component="th" className={classes.cell}><strong>Venue</strong></TableCell>
                 <TableCell component="th" className={classNames(classes.cell, classes.center)}><strong>From</strong></TableCell>
                 <TableCell component="th" className={classNames(classes.cell, classes.center)}><strong>To</strong></TableCell>
